@@ -2,7 +2,28 @@
 
 {% block content %}
 
-<img src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670593264/croke-park-generic-gaa_sonpf3.jpg" class="img-fluid" id='croker' alt="Croke Park">
+<!-- <img src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670593264/croke-park-generic-gaa_sonpf3.jpg" class="img-fluid" id='croker' alt="Croke Park"> -->
+
+<div class="container-fluid bg-img" title="Croke Park">
+    <div class="row p-4">
+        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-self-center mt-5 transparent">
+            <h1 class="fw-bold text-center white-text text-md-start mb-1">GAA Stories</h1>
+
+            <p class="fs-5 mb-4 text-center white-text text-md-start">Welcome to GAA Stories, the place where you can
+                post and interact with all the latest news and stories from with the world of GAA.
+            </p>
+            <div class="gap-3 d-flex justify-content-center justify-content-md-start mb-3">
+                <a href="#" role="button" class="btn btn-lg px-4 me-sm-3 fw-bold" id="sign-up">
+                    Sign Up
+                </a>
+                <a href="#" role="button" class="btn btn-outline-light btn-lg px-4 fw-bold" id="login">
+                    Login
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -10,27 +31,28 @@
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
+                    <div class="card mb-4 shadow-lg p-3 mb-5 rounded" id="outer-card-color">
+                        <div class="card-body" id="card-color">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" height="300" alt="Blog placeholder"
                                     src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670591937/football_zckwts.jpg">
                                 {% else %}
-                                <img class="card-img-top" alt="user blog image"
-                                    src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top" alt="user blog image" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p><span class="fw-bold author">Author:</span> <span class="text-capitalize fst-italic">{{ post.author }}</span></p>
+                                    <p><span class="fw-bold author">Author:</span> <span
+                                            class="text-capitalize fst-italic">{{ post.author }}</span></p>
                                 </div>
                                 </a>
                             </div>
                             <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <h2 class="card-title white-text hover">{{ post.title }}</h2>
+                                <p class="card-text white-text hover">{{ post.excerpt }}</p>
                             </a>
                             <hr>
-                            <p class="card-text text-muted h6">{{ post.created_date}} <i class="far fa-heart"></i>
+                            <p class="card-text fw-light h6 white-text">{{ post.created_date}} <i
+                                    class="far fa-heart white-text"></i>
                                 {{ post.number_of_likes }}
                             </p>
                         </div>
