@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap v5.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/14719ca4b9.js" crossorigin="anonymous"></script>
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>GAAStories</title>
+</head>
+
+<body>
+    <header class="navbar navbar-expand-md me-2 navbar-light mynavbar mx-auto">
+        <div class="container-fluid">
+            <div class="row mx-auto">
+
+                <a class="navbar-brand brand-name-link home-link" id="header" href="{% url 'home' %}">GAA Stories</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-expand-md mynavbar sticky-top" id="navbar">
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active home-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link contact-link" aria-current="page" href="#">Contact
+                        Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link blog-link" aria-current="page" href="#">Blog</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link my-post-link" aria-current="page" href="#">
+                        My Posts
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link logout-link" href="#">Logout</a>
+                </li>
+
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link signup-link" href="#">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link login-link" href="#">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </nav>
+
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <!-- display the alert messages -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" id="alert-msg">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

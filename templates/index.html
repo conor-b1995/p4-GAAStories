@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<img src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670593264/croke-park-generic-gaa_sonpf3.jpg" class="img-fluid" id='croker' alt="Croke Park">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top" height="300" alt="Blog placeholder"
+                                    src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670591937/football_zckwts.jpg">
+                                {% else %}
+                                <img class="card-img-top" alt="user blog image"
+                                    src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p><span class="fw-bold author">Author:</span> <span class="text-capitalize fst-italic">{{ post.author }}</span></p>
+                                </div>
+                                </a>
+                            </div>
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_date}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-signup" id="button">PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-signup" id="button"> NEXT</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+
+/* font sizes */
+#header {
+    font-size: 3rem;
+}
+
+.nav-item a {
+    font-size: 1.5rem;
+}
+
+/* colors */
+#navbar {
+    background-color: #576D0E;
+    color: white;
+}
+
+.nav-link {
+    color: #EDEDEF;
+}
+
+/* width and heights */
+
+#croker {
+    height: 75%;
+    width: 100%;
+}
+
+.nav-bar {
+    width: 100%;
+}
+
+body {
+    height: 1000px;
+}
+
+
