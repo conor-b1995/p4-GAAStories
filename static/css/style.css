@@ -26,7 +26,11 @@
     color: #EDEDEF;
 }
 
-footer {
+.nav-link:hover {
+    color: #7AAAB4;
+}
+
+footer { 
     background-color: #576D0E;
 }
 
@@ -44,9 +48,18 @@ footer {
 }
 
 #sign-up {
-    background-color: #7AAAB4;
-
+    background-color: #7AAAB4;   
 }
+
+#sign-up:hover {
+    color: #7AAAB4;
+    background-color: black;
+}
+
+.hover:hover {
+    color: #747374;
+}
+
 
 /* ------------------------- width and heights */
 /* #croker {
@@ -58,10 +71,9 @@ footer {
     width: 100%;
 }
 
-body {
+/* body {
     height: 1000px;
-}
-
+} */
 
 /* ------------------------- text decoration */
 
@@ -69,9 +81,11 @@ body {
     text-decoration: none;
 }
 
-.hover:hover {
-    color: #747374;
+.btn-like {
+    border-style: none;
+    background-color: transparent;
 }
+
 
 /* ------------------------- header section */
 

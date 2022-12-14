@@ -46,7 +46,7 @@
                                 </div>
                                 </a>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title white-text hover">{{ post.title }}</h2>
                                 <p class="card-text white-text hover">{{ post.excerpt }}</p>
                             </a>
