@@ -22,10 +22,13 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <title>GAAStories</title>
+    
+        <title>{% block title %}GAAStories{% endblock %}</title>
+    
+
 </head>
 
-<body>
+<body class="h-100">
     <header class="navbar navbar-expand-md me-2 navbar-light mynavbar mx-auto">
         <div class="container-fluid">
             <div class="row mx-auto">

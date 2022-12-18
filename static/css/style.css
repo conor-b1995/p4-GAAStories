@@ -60,6 +60,28 @@ footer {
     color: #747374;
 }
 
+.blue-back {
+    background-color: #7AAAB4;
+}
+
+#sign-in-btn {
+    background-color: #382212;
+    color: #EDEDEF;
+}
+
+#login-btn {
+    background-color: #576D0E;
+}
+
+.account-btn {
+    background-color: #382212;
+    color: #EDEDEF;
+}
+
+.account-btn:hover {
+    background-color: #EDEDEF;
+    color: #382212;
+}
 
 /* ------------------------- width and heights */
 /* #croker {
@@ -71,9 +93,6 @@ footer {
     width: 100%;
 }
 
-/* body {
-    height: 1000px;
-} */
 
 /* ------------------------- text decoration */
 
