@@ -17,6 +17,10 @@
     font-size: 1.2rem;
 }
 
+.like-comment-btn {
+    font-size: 1.35rem;
+}
+
 /* -------------------------colors */
 .white-text {
     color: white;
@@ -111,6 +115,7 @@ footer {
 .btn-like {
     border-style: none;
     background-color: transparent;
+    color: #576D0E;
 }
 
 
