@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="container">
     <div class="row g-0">
         <div class="col-md-6 mt-5 d-flex flex-column bd-highlight mb-3">
@@ -77,19 +79,19 @@
 
     {% if user.is_authenticated %}
     <div class="row d-flex card-bg">
-        <div class="col-md-8 card mb-4 mt-3 card-bg">
+        <div class="col-md-8 card mb-4 mt-3 pt-2 pb-2 card-bg">
             <h3>Comments:</h3>
-            <div class="card-body">
+            <div class="card-body" id="comments">
                 <!-- iterate through each comment in comments -->
                 {% for comment in comments %}
                 <div class="comments p-1">
-                    <p class="font-weight-bold text-justify">
-                        {{ comment.name }}
-                        <span class="font-weight-normal card-bg">
-                            {{ comment.created_on }}
-                        </span> wrote:
+                    <p class="text-justify text-dark fw-bold">
+                        {{ comment.name }} wrote:
                     </p>
                     {{ comment.body | linebreaks }}
+                    <span class="fw-light card-bg">
+                        {{ comment.created_date }}
+                    </span> 
                 </div>
                 {% endfor %}
             </div>
@@ -98,9 +100,9 @@
             <div class="card-body mt-3 pt-0 pb-4">
 
                 <h3>Tell us what you think:</h3>
-                <p class="text-justify">Posted by {{ user.username }}</p>
+                <p class="text-justify">Posting as: <span class="text-capitalize">{{ user.username }}</span></p>
                 <form method="POST">
-                    
+                    {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-dark btn-lg mt-2">Submit</button>
                 </form>
