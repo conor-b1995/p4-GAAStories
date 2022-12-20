@@ -95,6 +95,11 @@ footer {
     background-color: rgba(116, 115, 116, 0.3);
 }
 
+#post-btn {
+    background-color: #382212;
+    color: #EDEDEF;
+}
+
 /* ------------------------- width and heights */
 /* #croker {
     height: 75%;
