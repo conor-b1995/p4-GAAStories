@@ -100,6 +100,10 @@ footer {
     color: #EDEDEF;
 }
 
+#alert-msg {
+    background-color: #7AAAB4;
+}
+
 /* ------------------------- width and heights */
 /* #croker {
     height: 75%;

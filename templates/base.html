@@ -22,9 +22,9 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    
-        <title>{% block title %}GAAStories{% endblock %}</title>
-    
+
+    <title>{% block title %}GAAStories{% endblock %}</title>
+
 
 </head>
 
@@ -81,11 +81,6 @@
 
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        {% endblock content %}
-    </main>
-    
     <!-- display the alert messages -->
     <div class="container">
         <div class="row">
@@ -101,14 +96,26 @@
         </div>
     </div>
 
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+
     <footer class="mt-auto py-3 white-text">
         <div class="text-center">
             <p class="text-center">Created by Conor Beirne as part of Code Institute Full Stack Software
                 Developer Diploma.</p>
-            </div>
-        </footer>
-        
+        </div>
+    </footer>
 
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('alert-msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 
 
 </body>
