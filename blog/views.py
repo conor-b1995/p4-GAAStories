@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views.generic import ListView, View, CreateView
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -78,8 +79,32 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class AddPost(CreateView):
+class AddPost(View):
 
-    model = Post
-    form_class = PostForm
-    template_name = 'add_post.html'
+    def get(self, request):
+        context = {'form': PostForm()}
+        return render(request, 'add_post.html', context)
+
+    def post(self, request):
+
+        if request.method == 'POST':
+            form = PostForm(request.POST, initial={
+                'author': request.user.username
+                })
+            if form.is_valid():
+                form.instance.email = request.user.email
+                form.instance.name = request.user.username
+                form.instance.author = self.request.user
+                form.save()
+                messages.success(request, 'Your post is awaiting approval.')
+                return redirect('home')
+            else:
+                messages.error(
+                    request, 'Error: Something went wrong, please try again.')
+                context = {'form': form}
+                return render(request, 'add_post.html', context)
+        else:
+            form = PostForm()
+
+        context = {'form': form}
+        return render(request, 'index.html', context)
