@@ -14,9 +14,16 @@
             </h1>
             <small class="post-subtitle text-capitalize p-2 bd-highlight"> By: {{ post.author }} |
                 {{ post.created_date }} </small>
+            <div>
                 <a href="{% url 'update_post' post.slug %}">
-                    <button type="submit" class="btn mt-3 mb-3 fs-5" id="post-btn">Edit Post</button>
+                    <button type="submit" class="btn my-3 fs-5 me-2" id="post-btn">Edit Post</button>
                 </a>
+
+                <a href="{% url 'delete_post' post.slug %}">
+                    <button type="submit" class="btn my-3 fs-5" id="post-btn">Delete Post</button>
+                </a>
+
+            </div>
         </div>
 
         <div class="d-none d-md-block col-md-6 mt-5">
@@ -48,13 +55,13 @@
                                 {% csrf_token %}
                                 {% if liked %}
 
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like like-comment-btn"><i
-                                        class="fa-solid fa-thumbs-up"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"
+                                    class="btn-like like-comment-btn"><i class="fa-solid fa-thumbs-up"></i></button>
 
                                 {% else %}
 
-                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like like-comment-btn"><i
-                                        class="fa-regular fa-thumbs-up"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}"
+                                    class="btn-like like-comment-btn"><i class="fa-regular fa-thumbs-up"></i></button>
 
                                 {% endif %}
                             </form>

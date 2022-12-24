@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views.generic import ListView, View, UpdateView
+from django.views.generic import ListView, View, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm
@@ -115,3 +115,10 @@ class UpdatePost(UpdateView):
     model = Post
     template_name = 'update_post.html'
     fields = ['title', 'content', 'excerpt', 'featured_image']
+
+
+class DeletePost(DeleteView):
+
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = '/'
