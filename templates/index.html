@@ -23,10 +23,10 @@
             </div>
             {% else %}
             <div class="gap-3 d-flex justify-content-center justify-content-md-start mb-3">
-                <a href="#" role="button" class="btn btn-lg px-4 me-sm-3 fw-bold" id="sign-up">
+                <a href="{% url 'account_signup' %}" role="button" class="btn btn-lg px-4 me-sm-3 fw-bold" id="sign-up">
                     Sign Up
                 </a>
-                <a href="#" role="button" class="btn btn-outline-light btn-lg px-4 fw-bold" id="login-btn">
+                <a href="{% url 'account_login' %}" role="button" class="btn btn-outline-light btn-lg px-4 fw-bold" id="login-btn">
                     Login
                 </a>
             </div>
