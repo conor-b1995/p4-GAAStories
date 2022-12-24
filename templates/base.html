@@ -57,7 +57,7 @@
                         Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link blog-link" aria-current="page" href="#">Blog</a>
+                    <a class="nav-link blog-link" aria-current="page" href="{% url 'blog_posts' %}">Blog</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">

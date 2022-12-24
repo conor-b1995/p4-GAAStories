@@ -122,3 +122,11 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = '/'
+
+
+class BlogPosts(ListView):
+
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_date')
+    template_name = 'blog_posts.html'
+    paginate_by = 6

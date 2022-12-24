@@ -2,39 +2,6 @@
 
 {% block content %}
 
-
-<div class="container-fluid bg-img" title="Croke Park">
-    <div class="row p-4">
-        <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-self-center mt-5 transparent">
-            <h1 class="fw-bold text-center white-text text-md-start mb-1">GAA Stories</h1>
-
-            <p class="fs-5 mb-4 text-center white-text text-md-start">Welcome to GAA Stories, the place where you can
-                post and interact with all the latest news and stories from with the world of GAA.
-            </p>
-            {% if user.is_authenticated %}
-            <div class="gap-3 d-flex justify-content-center justify-content-md-start mb-3">
-                <a href="{% url 'blog_posts' %}" role="button" class="btn btn-lg px-4 me-sm-3 fw-bold" id="sign-up">
-                    Blog
-                </a>
-                <a href="{% url 'add_post' %}" role="button" class="btn btn-outline-light btn-lg px-4 fw-bold" id="login-btn">
-                    Add Post
-                </a>
-            </div>
-            {% else %}
-            <div class="gap-3 d-flex justify-content-center justify-content-md-start mb-3">
-                <a href="{% url 'account_signup' %}" role="button" class="btn btn-lg px-4 me-sm-3 fw-bold" id="sign-up">
-                    Sign Up
-                </a>
-                <a href="{% url 'account_login' %}" role="button" class="btn btn-outline-light btn-lg px-4 fw-bold" id="login-btn">
-                    Login
-                </a>
-            </div>
-            {% endif %}
-        </div>
-    </div>
-</div>
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3 left">
