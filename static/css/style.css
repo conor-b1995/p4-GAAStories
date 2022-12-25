@@ -156,3 +156,18 @@ footer {
     background-position: center center;
     overflow: hidden;
 }
+
+/* ------------------------- responsive design */
+@media screen and (max-width: 1030px){
+    .bg-img {
+        height: 65vh;
+    }
+}
+
+@media screen and (max-width: 770px){
+
+    #navbar {
+        background-color: white;
+    }
+}
+
