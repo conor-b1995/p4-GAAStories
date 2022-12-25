@@ -29,12 +29,13 @@
 </head>
 
 <body class="d-flex flex-column main-bg">
-    
+
     <header class="navbar navbar-expand-md navbar-light mynavbar mx-auto">
         <div class="container-fluid">
             <div class="row mx-auto">
 
-                <a class="navbar-brand brand-name-link home-link mx-auto" id="header" href="{% url 'home' %}">GAA Stories</a>
+                <a class="navbar-brand brand-name-link home-link mx-auto" id="header" href="{% url 'home' %}">GAA
+                    Stories</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,20 +62,18 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link my-post-link" aria-current="page" href="#">
-                        My Posts
-                    </a>
+                    <a href="{% url 'add_post' %}" class="nav-link">Add Post</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link logout-link" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
 
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link signup-link" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link login-link" href="{% url 'account_login' %}">Login</a>
+                    <a class="nav-link " href="{% url 'account_login' %}">Login</a>
                 </li>
                 {% endif %}
             </ul>
