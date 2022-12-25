@@ -1,10 +1,10 @@
-# Welcome to **[GAA Stories](p4-gaa-stories.herokuapp.com)**
+# Welcome to **[GAA Stories](https://p4-gaa-stories.herokuapp.com/)**
 
 (image going here)
 
 This purpose of this blog page is for people who are interested in talking and hearing about all the latest news within the GAA. Users can interact with posts by liking or commenting on a post there intersted in (only registered users can do these actions). A registered user can also create there own posts for the community to see.
 
-Check the deployed page [here](p4-gaa-stories.herokuapp.com).
+Check the deployed page [here](https://p4-gaa-stories.herokuapp.com/).
 
 ***
 
