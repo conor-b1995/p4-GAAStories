@@ -122,3 +122,101 @@ When the author of the post clicks the edit button they will be met with the sam
 ### Delete Post
 When a user wishes to delete a post and they hit the "Delete Post" button they will be directed to this page to confirm that they wanna delete the selected post.
 ![Delete Post](media/images/delete%20post.jpg)
+
+***
+
+## Tech Stack 
+
+### Languages
+Main programming languages used are:
+
+- Python
+- HTML
+- CSS
+- Javascript
+- Django
+
+### Tools
+- [Github](https://github.com/) for store and version control of the code.
+- [Gitpod](https://gitpod.io/workspaces) for editing code.
+- [Heroku](https://heroku.com/) for deployment.
+- [Cloudinary](https://cloudinary.com) for store the images and css files used in this project.
+<!-- - [techsini.com](https://techsini.com/multi-mockup/index.php) for generating the mock up. -->
+- [Bootstrap](https://getbootstrap.com/) was used to speed up the design the style and responsiveness of the website.
+- [Google](https://www.google.ie/) was used to source the images for the page.
+- [Font Awesome](https://fontawesome.com/) was used for the like button and the comment icon.
+- [Google Fonts](https://fonts.google.com/) was used to get the fonts used in the project. 
+- [Coolors](https://coolors.co/) was used to generate a color palette from an image I used.
+
+***
+
+## Testing
+
+.........
+
+***
+
+## Deployment
+ 
+To deploy your own project through Heroku follow the below steps:
+
+* Sign Up/ Log In to Heroku
+* On the Dashboard page select 'New' and the 'Create New App'.
+* Provide your new app a suitable name which is unique as it cant be in use already, and select the region.
+
+
+* I used [ElephantSql](https://www.elephantsql.com/) for my database.
+* Create your ElephantSql account.
+* Then navigate to the 'Create New Instance' tab.
+* Name your database and select 'Tiny Turtle' in the 'plan' dropdown as it is the free option.
+* Hit the 'Select region' button to continue.
+* From the 'Data center' dropdown select the option which is closest to your region.
+* Hit the 'review' button to review your plan and if its all good then hit 'create instance' to create your database.
+
+
+* Within the repository in GitPod create a new file called env.py - within this file import the os library and set the environment variable for the DATABASE_URL ElephantSQL.
+* Add a secret key to the app using os.environ["SECRET_KEY"] = "your secret key goes here". Add the secret key just created to the Heroku Config Vars as SECRET_KEY as the key and "your secret key" as the value.
+* In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url insert the line if os.path.isfile("env.py"): import env remove the insecure secret key with SECRET_KEY = os.environ.get('SECRET_KEY') replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}.
+* In the terminal migrate the models over to the new database and sign up/log in to cloudinary.
+* In cloudinary copy the CLOUDINARY_URL to the clipboard and paste this into the env.py as follows: os.environ["CLOUDINARY_URL"] = "Url copied here".
+* In Heroku, add the CLOUDINARY_URL and value copied from the clipboard to the config vars in settings. Also add the KEY - DISABLE_COLLECTSTATIC with the Value - "1". (This must be removed prior to final deployment)
+* Add the cloudinary libraries to the list of installed apps just above above 'django.contrib.staitcfiles' and cloudinary goes below.
+* In the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+* Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]
+* Heroku needs to be added to the allowed_hosts list followed by 'localhost'.
+* Create a new file on the top level directory - Procfile. Within this file ensure the following code is added: web: guincorn PROJECT_NAME.wsgi
+* Ensure ALL changes have been added, committed and pushed to GitHub.
+* Return to Heroku and look for the deployment tab. Click Deploy branch manually (this can be changed to automatic at later date).
+* If there are no build log errors you should see a notification advising ' Your App was successfully deployed' with a link to the live site.
+
+```
+Go to "Settings" then "Config Vars" and click the button "Reveal Config Vars". 
+Make sure your Config Vars look as follows:
+
+    * DATABASE_URL - (will be copied from ElephantSql)
+    * SECRET_KEY - (this is what ever value you gave it in settings.py)
+    * CLOUDINARY_URL - (copy the URL from your account on Cloudinary) 
+    * DISABLE_COLLECTSTATIC - (1)
+    * PORT - (8000)
+```
+
+***
+
+## Credits
+
+- The initial site functionality was made using the 'I Think There For I Blog' walkthrough by Matt Rudge via Code Institute. The code was adapted for what I needed.
+
+- The [Django Documentation](https://docs.djangoproject.com/en/4.1/) was an invaluable source of information throughout this project
+
+- The [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was a big source of information when the styling of the website was created.
+
+- This [video series](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) helped me alot throughout the project.
+
+- Online resources such as:
+    - [W3School](https://www.w3schools.com/)
+    - [Fontawsome](https://fontawesome.com/)
+    - [Markdown best practices](https://www.markdownguide.org/basic-syntax/)
+    - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    - [Stackoverflow](https://stackoverflow.com/)
+
+- The Code Institute Slack channel for always being helpful and full of information.
