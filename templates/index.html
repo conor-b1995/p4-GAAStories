@@ -45,14 +45,15 @@
                         <div class="card-body" id="card-color">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" height="300" alt="Blog placeholder"
+                                <img class="card-img-top img-fluid" height="300" alt="Blog placeholder"
                                     src="https://res.cloudinary.com/dw7lawnyl/image/upload/v1670591937/football_zckwts.jpg">
                                 {% else %}
-                                <img class="card-img-top" alt="user blog image" src=" {{ post.featured_image.url }}">
+                                <img class="card-img-top img-fluid" alt="user blog image" src=" {{ post.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-flash mt-2">
                                     <p><span class="fw-bold author">Author:</span> <span
-                                            class="text-capitalize fst-italic">{{ post.author }}</span></p>
+                                            class="text-capitalize fst-italic">{{ post.author }}</span>
+                                    </p>
                                 </div>
                                 </a>
                             </div>
@@ -82,10 +83,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-signup" id="button">PREV </a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="btn mt-3 mb-3 fs-5" id="post-btn">PREV </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-signup" id="button"> NEXT</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="btn mt-3 mb-3 fs-5" id="post-btn"> NEXT</a></li>
 
             {% endif %}
         </ul>

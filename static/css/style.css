@@ -130,10 +130,6 @@ footer {
 
 
 /* ------------------------- width and heights */
-/* #croker {
-    height: 75%;
-    width: 100%;
-} */
 
 .nav-bar {
     width: 100%;
@@ -166,16 +162,26 @@ footer {
 }
 
 /* ------------------------- responsive design */
+
 @media screen and (max-width: 1030px){
     .bg-img {
         height: 65vh;
     }
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 767px){
 
     #navbar {
         background-color: white;
     }
+
+    .nav-link {
+        color: black;
+    }
+
+    #navbarText {
+        padding-left: 20px;
+    }
+
 }
 
