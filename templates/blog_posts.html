@@ -18,10 +18,11 @@
                                 <img class="card-img-top" alt="user blog image" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p><span class="fw-bold author">Author:</span> <span
-                                            class="text-capitalize fst-italic">{{ post.author }}</span></p>
+                                    <p>
+                                        <span class="fw-bold author">Author:</span> 
+                                        <span class="text-capitalize fst-italic">{{ post.author }}</span>
+                                    </p>
                                 </div>
-                                </a>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title white-text hover">{{ post.title }}</h2>
