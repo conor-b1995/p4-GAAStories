@@ -183,5 +183,9 @@ footer {
         padding-left: 20px;
     }
 
+    .navbar-toggler {
+        background-color: #576D0E;
+    }
+
 }
 
