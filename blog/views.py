@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views.generic import ListView, View, UpdateView, DeleteView
+from django.views.generic import ListView, View, UpdateView, DeleteView, FormView
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ContactForm
 from django.contrib import messages
 
 
@@ -130,3 +130,21 @@ class BlogPosts(ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_date')
     template_name = 'blog_posts.html'
     paginate_by = 6
+
+
+class Contact(FormView):
+
+    template_name = 'contact_us.html'
+    form_class = ContactForm
+    success_url = '/'
+
+    def post(self, request):
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Thank you! Your message has been sent.')
+            return redirect('home')
+        else:
+            messages.error(request, 'This is not a valid form')
+            return redirect('home')
