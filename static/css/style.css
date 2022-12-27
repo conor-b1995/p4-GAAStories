@@ -62,11 +62,11 @@ footer {
     background-color: #576D0E;
 }
 
-#outer-card-color {
+.outer-card-color {
     background-color: #382212;
 }
 
-#card-color {
+.card-color {
     background-color: #7AAAB4;
     color: white;
 }
