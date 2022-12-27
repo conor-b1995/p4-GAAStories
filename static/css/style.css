@@ -37,6 +37,10 @@ body {
     font-size: 1.35rem;
 }
 
+#logo-icons {
+    font-size: 1.7rem;
+}
+
 /* -------------------------colors */
 .white-text {
     color: white;
@@ -118,6 +122,10 @@ footer {
 
 #alert-msg {
     background-color: #7AAAB4;
+}
+
+#logo-icons a:hover {
+    color: #7AAAB4;
 }
 
 
