@@ -6,38 +6,57 @@
 
 {% load crispy_forms_tags %}
 
-<div>
-    <h1 class="text-center mt-3">Edit post</h1>
-</div>
+{% if user.is_authenticated %}
+        {% if user.id == post.author.id or user.is_superuser %}
 
-<div class="container mb-3 mt-3">
-    <div class="row">
+            <div>
+                <h1 class="text-center mt-3">Edit post</h1>
+            </div>
 
-        <form method="post" class="text-center fs-5 white-text transparent p-3">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-md-8 col-sm-10 col mt-3 offset-md-2 offset-sm-1">
-                    {{form.title|as_crispy_field}}
-                </div>
-                <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
-                    {{form.content|as_crispy_field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
-                    {{form.excerpt|as_crispy_field}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
-                    {{form.featured_image|as_crispy_field}}
-                </div>
-            </div>
-            <button type="submit" class="btn mt-3 mb-3 fs-5" id="post-btn">Update</button>
-        </form>
+            <div class="container mb-3 mt-3">
+                <div class="row">
 
+                    <form method="post" class="text-center fs-5 white-text transparent p-3">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-8 col-sm-10 col mt-3 offset-md-2 offset-sm-1">
+                                {{form.title|as_crispy_field}}
+                            </div>
+                            <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
+                                {{form.content|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
+                                {{form.excerpt|as_crispy_field}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-10 mt-3 offset-md-2 offset-sm-1">
+                                {{form.featured_image|as_crispy_field}}
+                            </div>
+                        </div>
+                        <button type="submit" class="btn mt-3 mb-3 fs-5" id="post-btn">Update</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        {% else %}
+        <div class="d-flex justify-content-center">
+            <div class="text-center top-50">
+                You are not allowed here!
+            </div>
+        </div>
+        {% endif %}
+
+{% else %}
+    <div class="d-flex justify-content-center">
+        <div class="text-center top-50">
+            Warning: Restricted access!
+        </div>
     </div>
-
-</div>
+{% endif %}
 
 {% endblock %}
