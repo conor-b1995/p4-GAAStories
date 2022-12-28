@@ -29,8 +29,11 @@ Admin User Goals
 
 * As an Admin, I can create, read, update and delete posts from the admin panel.
 * As an Admin, I can approve or disapprove any comments.
-* As an Admin, I can approve all new blog posts, so that i can make sure the post is appropriate.
+* As an Admin, I can approve all new blog posts, so that I can make sure the post is appropriate.
 * As an Admin, I can determine specific level of priviledge of users in order to post blogs.
+
+GitHub issues were used to record the user stories. I then created a project to store them in and moved them from 'Todo -> 'In Progress' ->  'Done' as I was implementing each user story into the website. I found this a very helpful way to see all user stories in one place and tick them off one by one.
+![GitHub user stories](media/images/user%20stories.png)
 
 ***
 

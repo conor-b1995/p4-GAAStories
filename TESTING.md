@@ -40,3 +40,41 @@
 
 ## Automated testing
 Due to time constraints I unfortunately did not manage to add any automated test. I plan to do that in the future.
+
+## CSS Validation
+
+I ran my code through [The W3C CSS Validation Service](Jigsaw.w3.org/css-validator) with it showing no errors.
+![CSS validation](media/images/css%20validation.jpg)
+
+## HTML Validation
+
+I ran my code through [The W3C Markup Validation Service](https://validator.w3.org/) with it showing no errors.
+![HTML validation](media/images/html%20validation.jpg)
+
+
+## Python Validation
+
+I ran my code through [CI Python Linter](https://pep8ci.herokuapp.com/) with it showing only a few errors for having a "line too long". You can see all the images below for full context.
+
+<details>
+<summary>Python Validation</summary>
+
+![admin.py](media/images/admin.py%20linter.jpg)
+![apps.py](media/images/apps.py%20linter.jpg)
+![forms.py](media/images/forms.py%20linter.jpg)
+![GAAStories - urls.py](media/images/gaastories%20urls.py%20linter.jpg)
+![models.py](media/images/models.py%20linter.jpg)
+![settings.py](media/images/settings.py%20linter.jpg)
+![blog - urls.py](media/images/urls.py%20linter.jpg)
+![views.py](media/images/views.py%20linter.jpg)
+</details>
+
+
+## Lighthouse
+Overall score came back pretty good apart from best practices which will be worked on in the future.
+![Lighthouse](media/images/lighthouse.jpg)
+
+
+## Unsolved Bugs
+
+As with all projects I ran into many small problems from something simple like rendering the page to 100% viewport height(which I fixed), to a users uploaded image not showing on the blog page and still only having the placeholder image showing. Unfortunately I could not get this function of the project working in the time scale I had. 
