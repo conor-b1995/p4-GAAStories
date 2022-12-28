@@ -1,6 +1,6 @@
 # Welcome to **[GAA Stories](https://p4-gaa-stories.herokuapp.com/)**
 
-(image going here)
+![Responsive Image](media/images/responsive%20image.jpg)
 
 This purpose of this blog page is for people who are interested in talking and hearing about all the latest news within the GAA. Users can interact with posts by liking or commenting on a post there intersted in (only registered users can do these actions). A registered user can also create there own posts for the community to see.
 
@@ -58,6 +58,18 @@ The color pallette I used was generated from a picture of croke park which is th
 ### Fonts
 
 The fonts I used for this project are 'Oxygen' for the body and 'Prompt' for page title.
+
+
+### Database Schema
+To create my back-end database I have used ElephantSQL. I have designed my database using [drawSQL](https://drawsql.app/), this is a free-to-use software however quite limited, as some fields didn’t allow me to overwrite them, such as image fields. To help with the authentication Django has a built-in user Model Allauth which helps save time creating my own Model.
+
+I have created three models for this project Post Model, Comment Model and the Contact Us Model.
+
+<details>
+<summary>Models Diagram</summary>
+
+![Models Diagram](media/images/models%20diagram.jpg)
+</details>
 
 ***
 
@@ -152,7 +164,7 @@ Main programming languages used are:
 
 ## Testing
 
-.........
+Testing was done throughout the development of this site through trial and error with Google Dev tools. Testing and code validation can be found in the following [TESTING.md](TESTING.md).
 
 ***
 
